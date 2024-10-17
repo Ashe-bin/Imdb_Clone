@@ -1,3 +1,4 @@
+import NavbarItem from "@/components/NavbarItem";
 import React from "react";
 
 function Home() {
