@@ -1,12 +1,13 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import loading from "./loading";
 
 const API_KEY = process.env.API_KEY;
 
 function Home({ searchParams }) {
   const [results, setResults] = useState([]);
   const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(true); // to indicate the loading state
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const genre = searchParams.genre || "fetchTrending";
@@ -45,11 +46,15 @@ function Home({ searchParams }) {
   }, [searchParams.genre]); // dependencies
 
   if (loading) {
-    return <p>Loading...</p>; // Loading state
+    return <loading />;
   }
 
   if (error) {
-    return <p>Error: {error}</p>; // Error state
+    return (
+      <div>
+        <p>Something went wrong</p>
+      </div>
+    );
   }
 
   return (
