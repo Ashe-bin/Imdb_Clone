@@ -20,7 +20,6 @@ const Header = () => {
             {" "}
             IMDb
           </span>
-          <span className="text-xl hidden sm:inline"> Clone </span>
         </Link>
       </div>
     </div>

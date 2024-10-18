@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/header";
 import { ThemeProvider } from "next-themes";
 import Navbar from "@/components/Navbar";
+import SearchBox from "@/components/SearchBox";
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -32,6 +33,7 @@ export default function RootLayout({ children }) {
           >
             <Header />
             <Navbar />
+            <SearchBox />
             {children}
           </div>
         </ThemeProvider>
