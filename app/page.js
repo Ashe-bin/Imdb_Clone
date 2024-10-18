@@ -16,7 +16,7 @@ function Home({ searchParams }) {
       genre === "fetchTopRated" ? `/movie/top_rated` : `/trending/all/week`
     }?api_key=${API_KEY}`;
 
-    fetch(URL, {
+    const res = fetch(URL, {
       method: "GET",
       headers: {
         Authorization:
@@ -47,7 +47,12 @@ function Home({ searchParams }) {
   }, [searchParams.genre]); // dependencies
 
   if (loading) {
-    return <loading />;
+    return (
+      <div className="flex justify-center items-center">
+        {" "}
+        <loading />
+      </div>
+    );
   }
 
   if (error) {
